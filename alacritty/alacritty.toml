@@ -1,0 +1,6 @@
+[general]
+import = [ "theme.toml" ]
+
+[font]
+normal = { family = "JetbrainsMono Nerd Font", style = "Regular" }
+size = 10.0
