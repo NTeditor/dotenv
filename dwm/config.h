@@ -104,6 +104,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+  { 0, XK_Print, spawn, SHCMD("flameshot gui") },
 
   { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl set 1+") },
   { 0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 1-") },
