@@ -2,7 +2,7 @@
 #include "slstatus.h"
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 500;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -68,6 +68,8 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
     /* function format          argument */
+    {keymap, "[%s]", NULL},
+    {keyboard_indicators, "[%s]", "c?n?"},
     {vol_mute, "[%s ", "@DEFAULT_SINK@"},
     {vol_perc, "%s]", "@DEFAULT_SINK@"},
     {datetime, "[%s]", "%T"},

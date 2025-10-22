@@ -1,1 +1,2 @@
-feh --bg-fill /usr/share/backgrounds/archlinux/small.png
+#!/usr/bin/bash
+feh --bg-scale ~/.local/share/backgrounds/wp.png
