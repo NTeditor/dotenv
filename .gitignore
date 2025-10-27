@@ -3,3 +3,9 @@
 /dwm/*.tar.gz
 /dwm/*.tar.zst
 /dwm/*.diff
+
+/slstatus/pkg/
+/slstatus/src/
+/slstatus/*.tar.gz
+/slstatus/*.tar.zst
+/slstatus/*.diff
