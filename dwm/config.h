@@ -33,9 +33,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class              instance    title   tags mask   isfloating    monitor */
+	{ "firefox",          NULL,       NULL,   1 << 8,     0,            -1 },
+  { "TelegramDesktop",  NULL,       NULL,   1 << 7,     0,            -1 },
 };
 
 /* layout(s) */
@@ -53,6 +53,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -103,7 +104,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	TAGKEYS(                        XK_0,                      9)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-
+  { 0, XK_Print, spawn, SHCMD("flameshot gui") },
+  { ALTKEY, XK_f, spawn, SHCMD("firefox") },
+  { ALTKEY, XK_t, spawn, SHCMD("Telegram") },
   { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl set 1+") },
   { 0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 1-") },
   { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%+") },
