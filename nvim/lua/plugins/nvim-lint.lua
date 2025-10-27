@@ -1,6 +1,7 @@
 return {
 	"mfussenegger/nvim-lint",
-	ft = { "sh", "bash", "zsh", "c" },
+	ft = { "sh", "bash", "zsh", "c", "rust" },
+	enabled = false,
 	opts = {
 		events = { "BufWritePost", "BufReadPost", "InsertLeave" },
 		linters_by_ft = {
@@ -8,6 +9,7 @@ return {
 			bash = { "shellcheck" },
 			zsh = { "shellcheck" },
 			c = { "clangtidy" },
+			rust = { "clippy" },
 		},
 		linters = {},
 	},

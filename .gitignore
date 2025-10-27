@@ -1,0 +1,5 @@
+/dwm/pkg/
+/dwm/src/
+/dwm/*.tar.gz
+/dwm/*.tar.zst
+/dwm/*.diff

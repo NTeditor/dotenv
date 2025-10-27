@@ -4,9 +4,9 @@ return {
 	event = "VeryLazy",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	keys = {
-		{ "<leader>bl", "<cmd>bn<cr>", desc = "Buffer next" },
-		{ "<leader>bh", "<cmd>bp<cr>", desc = "Buffer previous" },
-		{ "<leader>bd", "<cmd>bd<cr>", desc = "Buffer delete" },
+		{ "L", "<cmd>bn<cr>", desc = "Buffer next" },
+		{ "H", "<cmd>bp<cr>", desc = "Buffer previous" },
+		{ "BD", "<cmd>bd<cr>", desc = "Buffer delete" },
 	},
 	opts = {},
 }
