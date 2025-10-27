@@ -15,6 +15,10 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			rust = { "rustfmt" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			json = { "prettier" },
+			python = { "black" },
 		},
 		default_format_opts = {
 			lsp_format = "fallback",

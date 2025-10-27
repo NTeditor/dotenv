@@ -10,6 +10,8 @@ return {
 			preset = "none",
 			["<Tab>"] = { "select_next", "fallback" },
 			["<S-Tab>"] = { "select_prev", "fallback" },
+			["<C-J>"] = { "select_next", "fallback" },
+			["<C-K>"] = { "select_prev", "fallback" },
 
 			["<C-l>"] = { "scroll_documentation_down", "fallback" },
 			["<C-h>"] = { "scroll_documentation_up", "fallback" },
@@ -29,6 +31,8 @@ return {
 				preset = "none",
 				["<Tab>"] = { "show", "select_next", "fallback" },
 				["<S-Tab>"] = { "select_prev", "fallback" },
+				["<C-J>"] = { "select_next", "fallback" },
+				["<C-K>"] = { "select_prev", "fallback" },
 
 				["<C-l>"] = { "scroll_documentation_down", "fallback" },
 				["<C-h>"] = { "scroll_documentation_up", "fallback" },
