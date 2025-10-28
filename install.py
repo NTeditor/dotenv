@@ -21,15 +21,21 @@ def main():
         help="Installing package in pacman/makepkg",
         action="store_true",
     )
+    parser.add_argument(
+        "-f",
+        dest="force",
+        help="Force re-build PKGBUILD",
+        action="store_true",
+    )
 
     args = parser.parse_args()
     if args.sync:
-        sync_cmd(args.packages, args.pacman)
+        sync_cmd(args.packages, args.pacman, args.force)
     elif args.remove:
         remove_cmd(args.packages, args.pacman)
 
 
-def sync_cmd(packages: list[str], use_pacman: bool):
+def sync_cmd(packages: list[str], use_pacman: bool, force: bool):
     if not use_pacman:
         print("warn: Use -p flag to install a package in pacman")
 
@@ -41,7 +47,7 @@ def sync_cmd(packages: list[str], use_pacman: bool):
             continue
 
         if use_pacman:
-            install_with_pacman(package, package_dotenv)
+            install_with_pacman(package, package_dotenv, force)
         elif package in SUCKLESS_PACKAGES:
             print(f"warn: pacman is required to install '{package}'. Skip..")
             continue
@@ -105,28 +111,38 @@ def pre_remove_check(package: str, package_config: Path) -> bool:
     return True
 
 
-def install_with_pacman(package: str, package_dotenv: Path):
+def install_with_pacman(package: str, package_dotenv: Path, force: bool):
     if package in SUCKLESS_PACKAGES:
+        command = ["makepkg", "-s", "-i"]
+        if force:
+            command += ["-f"]
+
         print(f" -- [{package}] Installing via makepkg..")
-        subprocess.run("makepkg -si", cwd=package_dotenv, shell=True, check=True)
+        subprocess.run(command, cwd=package_dotenv, check=True)
         print(f" -- [{package}] Done")
     else:
+        command = ["sudo", "pacman", "-S"]
         if package == "nvim":
-            package = "neovim lua51 luarocks"
+            command += ["neovim", "lua51", "luarocks"]
+        else:
+            command += [package]
 
         print(f" -- [{package}] Installing via pacman..")
-        subprocess.run(f"sudo pacman -S {package}", shell=True, check=True)
+        subprocess.run(command, check=True)
         print(f" -- [{package}] Done")
 
 
 def remove_with_pacman(package: str):
+    command = ["sudo", "pacman" "-R", "-n", "-s"]
     if package in SUCKLESS_PACKAGES:
-        package = f"{package}-nteditor"
+        command += [f"{package}-nteditor"]
     elif package == "nvim":
-        package = "neovim lua51 luarocks"
+        command += ["neovim", "lua51", "luarocks"]
+    else:
+        command += [package]
 
     print(f" -- [{package}] Removing via pacman..")
-    subprocess.run(f"sudo pacman -Rns {package}", shell=True, check=True)
+    subprocess.run(command, check=True)
     print(f" -- [{package}] Done")
 
 
