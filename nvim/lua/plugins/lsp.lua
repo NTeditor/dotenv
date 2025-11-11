@@ -3,23 +3,21 @@ return {
 	event = "VeryLazy",
 	keys = {
 		{
-			"<leader>r",
-			function()
-				vim.lsp.buf.rename()
-			end,
+			"<leader>lr",
+			vim.lsp.buf.rename,
 			{ desc = "LSP Rename" },
 		},
 	},
 	config = function()
-		vim.lsp.enable({ "lua_ls", "rust_analyzer", "pyright", "vtsls" })
+		vim.lsp.enable({ "lua_ls", "rust_analyzer", "pyright", "vtsls", "gopls" })
 
 		vim.diagnostic.config({
-			float = true,
-			virtual_text = true,
-			signs = false,
-			underline = true,
-			update_in_insert = true,
-			severity_sort = true,
+			float = false,
+			virtual_text = false,
+			underline = false,
+			update_in_insert = false,
+			severity_sort = false,
+			signs = true,
 		})
 	end,
 }

@@ -10,6 +10,6 @@ vim.opt.expandtab = true
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.wrap = false
-vim.opt.mouse = ""
 
 vim.keymap.set({ "n", "v" }, "<leader>s", '"+', { desc = "Plus register" })
+vim.keymap.set({ "i", "v", "s", "x", "c" }, "jk", "<Esc>", { desc = "Esc" })

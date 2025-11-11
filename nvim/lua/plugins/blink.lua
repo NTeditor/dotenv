@@ -7,17 +7,7 @@ return {
 	---@type blink.cmp.Config
 	opts = {
 		keymap = {
-			preset = "none",
-			["<Tab>"] = { "select_next", "fallback" },
-			["<S-Tab>"] = { "select_prev", "fallback" },
-			["<C-J>"] = { "select_next", "fallback" },
-			["<C-K>"] = { "select_prev", "fallback" },
-
-			["<C-l>"] = { "scroll_documentation_down", "fallback" },
-			["<C-h>"] = { "scroll_documentation_up", "fallback" },
-
-			["<C-space>"] = { "show", "hide", "fallback" },
-			["<CR>"] = { "accept", "fallback" },
+			preset = "enter",
 		},
 		appearance = {
 			nerd_font_variant = "normal",
@@ -28,17 +18,9 @@ return {
 		cmdline = {
 			enabled = true,
 			keymap = {
-				preset = "none",
-				["<Tab>"] = { "show", "select_next", "fallback" },
-				["<S-Tab>"] = { "select_prev", "fallback" },
-				["<C-J>"] = { "select_next", "fallback" },
-				["<C-K>"] = { "select_prev", "fallback" },
-
-				["<C-l>"] = { "scroll_documentation_down", "fallback" },
-				["<C-h>"] = { "scroll_documentation_up", "fallback" },
-
-				["<C-space>"] = { "show", "hide", "fallback" },
-				["<CR>"] = { "accept", "fallback" },
+				preset = "enter",
+				["<Tab>"] = { "show_and_insert_or_accept_single", "select_next" },
+				["<S-Tab>"] = { "show_and_insert_or_accept_single", "select_prev" },
 			},
 		},
 		signature = { enabled = true },
@@ -50,18 +32,11 @@ return {
 				},
 			},
 			menu = {
-				auto_show = false,
+				auto_show = true,
 				border = "rounded",
-				draw = {
-					columns = {
-						{ "label" },
-						{ "kind", "source_name", gap = 5 },
-					},
-				},
-			},
-			ghost_text = {
-				enabled = false,
 			},
 		},
+		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
+	opts_extend = { "sources.default" },
 }
