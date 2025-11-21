@@ -11,5 +11,4 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.wrap = false
 
-vim.keymap.set({ "n", "v" }, "<leader>s", '"+', { desc = "Plus register" })
-vim.keymap.set({ "i", "v", "s", "x", "c" }, "jk", "<Esc>", { desc = "Esc" })
+vim.keymap.set({ "i" }, "jk", "<Esc>", { desc = "Esc" })

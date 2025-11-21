@@ -9,3 +9,5 @@
 /slstatus/*.tar.gz
 /slstatus/*.tar.zst
 /slstatus/*.diff
+
+/nvim/lazy-lock.json

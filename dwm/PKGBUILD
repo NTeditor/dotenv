@@ -7,13 +7,13 @@
 
 pkgname=dwm-nteditor
 pkgver=6.6
-pkgrel=3
+pkgrel=4
 pkgdesc="A dynamic window manager for X"
 url="https://dwm.suckless.org"
 arch=('i686' 'x86_64' 'arm' 'armv7h' 'armv6h' 'aarch64')
 license=('MIT')
 options=(zipman)
-depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'rofi' 'alacritty')
+depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'rofi' 'alacritty' 'ttf-cascadia-mono-nerd')
 optdepends=(
     'lxqt-policykit: The LXQt policykit authentication agent'
     'dunst: Customizable and lightweight notification-daemon'

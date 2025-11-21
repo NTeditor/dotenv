@@ -12,6 +12,11 @@ return {
 		},
 	},
 	opts = {
+		default_format_opts = {
+			lsp_format = "fallback",
+			async = false,
+			timeout_ms = 1,
+		},
 		formatters_by_ft = {
 			lua = { "stylua" },
 			rust = { "rustfmt" },
@@ -19,9 +24,6 @@ return {
 			typescript = { "prettier" },
 			json = { "prettier" },
 			python = { "black" },
-		},
-		default_format_opts = {
-			lsp_format = "fallback",
 		},
 		format_on_save = {
 			lsp_format = "fallback",
