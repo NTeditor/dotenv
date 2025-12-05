@@ -9,7 +9,7 @@ return {
 		},
 	},
 	config = function()
-		vim.lsp.enable({ "lua_ls", "rust_analyzer", "pyright", "vtsls", "gopls" })
+		vim.lsp.enable({ "lua_ls", "rust_analyzer", "pyright", "vtsls", "gopls", "nushell" })
 
 		vim.diagnostic.config({
 			float = false,
