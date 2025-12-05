@@ -1,7 +1,8 @@
 return {
 	{
 		"ellisonleao/gruvbox.nvim",
-		enabled = false,
+		lazy = false,
+		priority = 1000,
 		opts = {
 			contrast = "hard",
 			italic = {
@@ -18,6 +19,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {},
