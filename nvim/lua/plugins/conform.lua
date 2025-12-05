@@ -5,8 +5,7 @@ return {
 		{
 			"<leader>f",
 			function()
-				local buf = vim.api.nvim_get_current_buf()
-				require("conform").format({ bufnr = buf })
+				require("conform").format()
 			end,
 			desc = "Format currect buf",
 		},
@@ -15,7 +14,7 @@ return {
 		default_format_opts = {
 			lsp_format = "fallback",
 			async = false,
-			timeout_ms = 1,
+			timeout_ms = 3000,
 		},
 		formatters_by_ft = {
 			lua = { "stylua" },
@@ -24,10 +23,11 @@ return {
 			typescript = { "prettier" },
 			json = { "prettier" },
 			python = { "black" },
+			go = { "gofmt" },
 		},
 		format_on_save = {
 			lsp_format = "fallback",
-			timeout_ms = 500,
+			timeout_ms = 5000,
 		},
 	},
 }
