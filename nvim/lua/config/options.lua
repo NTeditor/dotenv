@@ -11,4 +11,14 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.wrap = false
 
-vim.keymap.set({ "i" }, "jk", "<Esc>", { desc = "Esc" })
+vim.keymap.set({ "i", "v" }, "jk", "<Esc>", { desc = "Esc" })
+vim.keymap.set({ "t" }, "jk", "<C-\\><C-n>", { desc = "Esc" })
+vim.keymap.set({ "i", "v" }, "<Esc>", "<Nop>", { desc = "Disable Esc" })
+vim.keymap.set({ "i", "v" }, "<Esc>", "<Nop>", { desc = "Disable Esc" })
+vim.keymap.set({ "n", "i", "v" }, "<leader><leader>", '"+')
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		require("lazy").update({ show = false })
+	end,
+})
