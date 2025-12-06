@@ -15,7 +15,7 @@ vim.keymap.set({ "i", "v" }, "jk", "<Esc>", { desc = "Esc" })
 vim.keymap.set({ "t" }, "jk", "<C-\\><C-n>", { desc = "Esc" })
 vim.keymap.set({ "i", "v" }, "<Esc>", "<Nop>", { desc = "Disable Esc" })
 vim.keymap.set({ "i", "v" }, "<Esc>", "<Nop>", { desc = "Disable Esc" })
-vim.keymap.set({ "n", "i", "v" }, "<leader><leader>", '"+')
+vim.keymap.set({ "n", "v" }, "<leader><leader>", '"+')
 
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()

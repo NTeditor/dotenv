@@ -1,0 +1,10 @@
+^manual
+^\.github
+^\.gitignore
+^\.git
+\.swp$
+\.bak$
+\.md$
+\.py$
+\.sh$
+
