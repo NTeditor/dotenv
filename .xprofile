@@ -1,6 +1,3 @@
-export QT_QPA_PLATFORMTHEME=qt6ct
-feh --bg-scale ~/.local/share/backgrounds/wp.png
-
 if [ -n "$XDG_SESSION_DESKTOP" ]; then
   session="$XDG_SESSION_DESKTOP"
 elif [ -n "$DESKTOP_SESSION" ]; then
@@ -12,6 +9,8 @@ fi
   
 case "$session" in
   "dwm")
+    export QT_QPA_PLATFORMTHEME=gtk3
+    feh --bg-scale ~/.wp
     slstatus &
     lxqt-policykit-agent &
     dunst &

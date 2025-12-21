@@ -4,16 +4,16 @@
 /* appearance */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systrayspacing = 1;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
 
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
+static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "CaskaydiaMono Nerd Font:size=10" };
-static const char dmenufont[]       = "CaskaydiaMono Nerd Font 11";
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=11" };
+static const char dmenufont[]       = "JetBrainsMono Nerd Font 12";
 
 static const char col_bg[]          = "#282828";
 static const char col_fg[]          = "#ebdbb2";
@@ -54,7 +54,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
-#define ALTKEY Mod1Mask
+// #define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -104,9 +104,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_0,                      9)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
   { 0, XK_Print, spawn, SHCMD("flameshot gui") },
-  { ALTKEY, XK_f, spawn, SHCMD("firefox") },
-  { ALTKEY, XK_t, spawn, SHCMD("Telegram") },
-  { ALTKEY, XK_s, spawn, SHCMD("steam") },
+  // { ALTKEY, XK_f, spawn, SHCMD("firefox") },
+  // { ALTKEY, XK_t, spawn, SHCMD("Telegram") },
+  // { ALTKEY, XK_s, spawn, SHCMD("steam") },
   { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl set 1+") },
   { 0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 1-") },
   { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_SINK@ 5%+") },
