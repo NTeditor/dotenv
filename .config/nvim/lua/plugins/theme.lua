@@ -7,10 +7,10 @@ return {
 			contrast = "hard",
 			italic = {
 				strings = false,
-				emphasis = true,
-				comments = true,
+				emphasis = false,
+				comments = false,
 				operators = false,
-				folds = true,
+				folds = false,
 			},
 		},
 		config = function()
