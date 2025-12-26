@@ -7,7 +7,7 @@
 
 pkgname=dwm-nteditor
 pkgver=6.6
-pkgrel=5
+pkgrel=6
 pkgdesc="A dynamic window manager for X"
 url="https://dwm.suckless.org"
 arch=('i686' 'x86_64' 'arm' 'armv7h' 'armv6h' 'aarch64')
@@ -26,12 +26,14 @@ source=(dwm.desktop
         https://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
         'systray.diff::https://dwm.suckless.org/patches/systray/dwm-systray-20230922-9f88553.diff'
         'pertag.diff::https://dwm.suckless.org/patches/pertag/dwm-pertag-20200914-61bb8b2.diff'
+        'noborder.diff::https://dwm.suckless.org/patches/noborder/dwm-noborderfloatingfix-6.2.diff'
         xprofile.example
         config.h)
 sha256sums=('bc36426772e1471d6dd8c8aed91f288e16949e3463a9933fee6390ee0ccd3f81'
             '7cfc2c6d9386c07c49e2c906f209c18ba3364ce0b4872eae39f56efdb7fc00a3'
             '29e357bd74f180016898fffaf219637952c777d26f5f2f161d0fbaea741908a1'
             '01cf4b387d2b2aee77e9c6288b5193b2cb5192405d1a9916ea82687152967fd1'
+            'a2cc6b3ac8b33e13a94356beb433cc6e62ac8ef03e14c0bc6706df8883679d84'
             '1ceb360faa82c5669c6616efdc7b05449ece8c35b19a337573ab88606cd63241'
             'SKIP')
 
@@ -42,6 +44,7 @@ prepare() {
   fi
   patch -Np1 -i "$srcdir/systray.diff"
   patch -Np1 -i "$srcdir/pertag.diff"
+  patch -Np1 -i "$srcdir/noborder.diff"
 }
 
 build() {
