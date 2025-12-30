@@ -15,12 +15,13 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=11" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font 12";
 
-static const char col_bg[]          = "#504945";
+static const char col_bg[]          = "#282828";
+static const char col_bg2[]         = "#504945";
 static const char col_fg[]          = "#ebdbb2";
 static const char col_orange[]      = "#d65d0e";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg, col_bg, col_bg },
+	[SchemeNorm] = { col_fg, col_bg, col_bg2 },
 	[SchemeSel]  = { col_fg, col_orange,  col_orange  },
 };
 
